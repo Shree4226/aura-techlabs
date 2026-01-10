@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* Base glow style */
+.glow-text {
+    text-shadow: 0 0 0px rgba(218, 231, 237, 0);
+    transition: text-shadow 0.4s ease;
+}
+
+/* Hover glow */
+.glow-text:hover {
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.6),
+        0 0 8px rgba(255, 255, 255, 0.4);
+
+}
+
+
+@layer base {
+    body {
+        @apply bg-[url('/images/BackgroundImg.jpg')] bg-cover
+    }
+}
+
+@layer components {
+
+    .upper {
+        @apply flex flex-col items-center bg-black/50 backdrop-blur-sm
+    }
+
+    .navbar a {
+        @apply hover:text-white transition
+    }
+
+    .navbar {
+        @apply flex items-center justify-between w-full px-20 py-8
+    }
+
+    .content {
+        @apply mt-12
+        /* spacing from previous section */
+        text-center
+        /* center the text */
+        max-w-3xl
+        /* limit width for better readability */
+        mx-auto
+        /* center container horizontally */
+        px-4
+        /* small horizontal padding for mobile */
+        text-white;
+        /* white text */
+    }
+
+    .content h6 {
+        @apply text-2xl
+        /* heading size */
+        md:text-3xl
+        /* bigger on medium screens */
+        font-bold
+        /* bold heading */
+        font-sans
+        /* clean sans-serif font */
+        tracking-wide
+        /* slightly spaced letters */
+        mb-6;
+        /* space below heading */
+    }
+
+    .content p {
+        @apply text-base
+        /* paragraph size */
+        md:text-lg
+        /* larger on medium screens */
+        font-light
+        /* lighter weight for paragraph */
+        leading-relaxed
+        /* comfortable line height */
+        text-gray-200
+        /* soft white text for readability */
+        mb-10
+        ml-6
+        mr-6
+    }
+
+}
