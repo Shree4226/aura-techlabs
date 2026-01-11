@@ -1,3 +1,4 @@
+import Contact from "./Components/Contact"
 import Navbar from "./Components/Navbar"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <Navbar/>
+      <Contact/>
     </>
   )
 }

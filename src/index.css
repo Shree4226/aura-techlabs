@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Background:      #121212
+Cards/Sections:  #1E1E1E
+Primary Text:    #F5F5F5
+Secondary Text:  #B0B0B0
+Accent:          #00B4D8   (Cyan tech glow)
+Divider:         #2C2C2C */
+
 /* Base glow style */
 .glow-text {
     text-shadow: 0 0 0px rgba(218, 231, 237, 0);
@@ -36,7 +43,7 @@
     }
 
     .content {
-        @apply mt-12
+        @apply mt-32
         /* spacing from previous section */
         text-center
         /* center the text */
@@ -61,8 +68,9 @@
         /* clean sans-serif font */
         tracking-wide
         /* slightly spaced letters */
-        mb-6;
+        mb-6
         /* space below heading */
+        text-[#00B4D8]
     }
 
     .content p {
@@ -76,9 +84,97 @@
         /* comfortable line height */
         text-gray-200
         /* soft white text for readability */
-        mb-10
-        ml-6
-        mr-6
+        mb-10 ml-6 mr-6
+    }
+
+
+    .contact {
+        @apply bg-black/40 py-10 flex justify-center ml-5 mr-5 md:ml-30 md:mr-30 mt-10 ;
+    }
+
+    .contact-section {
+        @apply w-full max-w-[1200px] h-full;
+    }
+
+    .contact-title {
+        @apply text-white text-4xl text-center mb-10 font-bold font-serif shadow-lg;
+    }
+
+    .contact-box {
+        @apply rounded-2xl p-10 flex gap-5 flex-wrap;
+    }
+
+    /* LEFT */
+
+    .contact-left {
+        @apply flex-1 min-w-[300px] relative h-[465px]  overflow-hidden;
+    }
+
+    .contact-left iframe {
+        @apply w-full h-full border-0 p-0.5 ;
+        ;
+    }
+
+
+    /* RIGHT */
+
+    .contact-right {
+        @apply flex-1 min-w-[320px] flex flex-col gap-2;
+    }
+
+    /* First row */
+
+    .contact-details {
+        @apply flex gap-5 bg-[#1e1e1e]
+    }
+
+    .contact-address,
+    .contact-info {
+        @apply flex-1 p-2 text-white;
+    }
+
+    .contact-address h3,
+    .contact-info h3 {
+        @apply mb-1 font-semibold;
+    }
+
+    .contact-address p,
+    .contact-info p {
+        @apply text-sm text-white/80 leading-relaxed;
+    }
+
+    /* Form container */
+
+
+    .contact-email {
+        @apply p-2.5 bg-[#1E1E1E];
+    }
+
+    /* Card container */
+    .contact-email-card {
+        @apply bg-[#1E1E1E] p-1  shadow-lg max-w-md mx-auto;
+    }
+
+    /* Form inside the card */
+    .contact-email-form {
+        @apply flex flex-col gap-4 p-3;
+    }
+
+    /* Inputs and textarea */
+    .contact-email-form input,
+    .contact-email-form textarea {
+        @apply bg-black/70 text-white p-1 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-white;
+    }
+
+    /* Placeholder styling */
+    .contact-email-form input::placeholder,
+    .contact-email-form textarea::placeholder {
+        @apply text-gray-500;
+    }
+
+    /* Button */
+    .contact-email-form button {
+        @apply bg-white text-black py-2 px-6 rounded-md font-semibold  transition-colors disabled:opacity-50;
     }
 
 }

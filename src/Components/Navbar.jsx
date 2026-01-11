@@ -28,9 +28,9 @@ const Navbar = () => {
 
     return (
 
-        <nav className='upper fixed top-0 left-0 w-full z-50'>
+        <nav className='upper top-0 left-0 w-full z-50'>
 
-            <div className='navbar'>
+            <div className='navbar fixed'>
                 <p
                     ref={compRef}
                     className="text-white text-3xl font-bold tracking-wide glow-text glow-once">Aura Techlabs</p>
