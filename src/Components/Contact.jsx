@@ -3,7 +3,7 @@ import ContactEmail from '../sections/ContactEmail'
 
 const Contact = () => {
     return (
-        <footer className="contact">
+        <section id="contact" className='contact'>
 
             <div className="contact-section">
                 <h2 className='contact-title'>Contact Us</h2>
@@ -42,7 +42,7 @@ const Contact = () => {
                 </div>
             </div>
 
-        </footer>
+        </section>
 
 
     )

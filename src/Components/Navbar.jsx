@@ -1,8 +1,18 @@
 import React, { useEffect, useRef } from 'react'
 import { navLinks } from '../../constants'
 import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/all'
+gsap.registerPlugin(ScrollToPlugin);
 
 const Navbar = () => {
+
+    const handleScroll = (id)=>{
+        gsap.to(window,{
+            duration:1,
+            scrollTo:`#${id}`,
+            ease:"power2.out"
+        });
+    };
 
     const compRef = useRef(null);
     const contentRef = useRef(null);
@@ -27,32 +37,39 @@ const Navbar = () => {
 
 
     return (
+        <>
 
-        <nav className='upper top-0 left-0 w-full z-50'>
+            <nav className='upper top-0 left-0 w-full z-50'>
 
-            <div className='navbar fixed'>
-                <p
-                    ref={compRef}
-                    className="text-white text-3xl font-bold tracking-wide glow-text glow-once">Aura Techlabs</p>
+                <div className='navbar'>
+                    <p
+                        ref={compRef}
+                        className="text-white text-1xl font-bold tracking-wide glow-text glow-once">Aura Techlabs</p>
 
-                <ul className='flex gap-8 text-white/70 font-xl'>
-                    {navLinks.map((link) => (
-                        <li key={link.id}>
-                            <a href={`${link.id}`}>{link.title}</a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                    <ul className='flex gap-8 text-white/70 font-xl'>
+                        {navLinks.map((link) => (
+                            <li 
+                            key={link.id}
+                            onClick={()=>handleScroll(link.id)}
+                            className="cursor-pointer hover:text-white transition-colors"
+                            >
+                                {link.title}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 
-            <div className='content' ref={contentRef}>
-                <h6>
+                <div className='content' ref={contentRef}>
+                    <h6>
                     Consumer Electronics / Smart Lifestyle Products
                 </h6>
-                <p>
-                    Designing cutting-edge electronics and smart devices that simplify everyday life while delivering exceptional quality and innovation.
-                </p>
-            </div>
-        </nav>
+                    <p>
+                        Designing cutting-edge electronics and smart devices that simplify everyday life while delivering exceptional quality and innovation.
+                    </p>
+                </div>
+            </nav>
+        </>
+
     )
 }
 

@@ -1,11 +1,11 @@
 const navLinks = [
 {
-    id:'products',
-    title:'Products'
+    id:'home',
+    title:'Home'
 },
 {
-    id:'art',
-    title:'Art'
+    id:'products',
+    title:'Products'
 },
 {
     id:'contact',
